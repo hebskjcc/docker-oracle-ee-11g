@@ -56,7 +56,7 @@ case "$1" in
 			export IMPORT_FROM_VOLUME=true
 
 			if [ -z "$CHARACTER_SET" ]; then
-				export CHARACTER_SET="AL32UTF8"
+				export CHARACTER_SET="ZHS16GBK"
 			fi
 
 			#printf "Setting up:\nprocesses=$processes\nsessions=$sessions\ntransactions=$transactions\n"
@@ -68,7 +68,7 @@ case "$1" in
 			su oracle -c "/u01/app/oracle/product/11.2.0/EE/bin/tnslsnr &"
 			#create DB for SID: EE
 			echo "Running initialization by dbca"
-			su oracle -c "$ORACLE_HOME/bin/dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname EE.oracle.docker -sid EE -responseFile NO_VALUE -characterSet $CHARACTER_SET -totalMemory $DBCA_TOTAL_MEMORY -emConfiguration LOCAL -dbsnmpPassword oracle -sysPassword oracle -systemPassword oracle"
+			su oracle -c "$ORACLE_HOME/bin/dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname EE.oracle.docker -sid ORCL -responseFile NO_VALUE -characterSet $CHARACTER_SET -totalMemory $DBCA_TOTAL_MEMORY -emConfiguration LOCAL -dbsnmpPassword oracle -sysPassword oracle -systemPassword oracle"
 			
 			# echo "Configuring Apex console"
 			# cd $ORACLE_HOME/apex
