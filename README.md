@@ -9,25 +9,25 @@ This **Dockerfile** is a [trusted build](https://registry.hub.docker.com/u/sath8
 
 ### Installation
 
-    docker pull sath89/oracle-ee-11g
+    docker pull hebskjcc/oracle-11g-ee
 
 Run with 8080 and 1521 ports opened:
 
-    docker run -d -p 8080:8080 -p 1521:1521 sath89/oracle-ee-11g
+    docker run -d -p 8080:8080 -p 1521:1521 hebskjcc/oracle-11g-ee
 
 Run with data on host and reuse it:
 
-    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle sath89/oracle-ee-11g
+    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle hebskjcc/oracle-11g-ee
 
 Run with Custom DBCA_TOTAL_MEMORY (in Mb):
 
-    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle -e DBCA_TOTAL_MEMORY=1024 sath89/oracle-11g
+    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle -e DBCA_TOTAL_MEMORY=1024 hebskjcc/oracle-11g-ee
 
 Connect database with following setting:
 
     hostname: localhost
     port: 1521
-    sid: EE
+    sid: ORCL
     service name: EE.oracle.docker
     username: system
     password: oracle
