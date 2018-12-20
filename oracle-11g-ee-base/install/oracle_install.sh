@@ -6,9 +6,9 @@ set -e
 cat /etc/security/limits.conf | grep -v oracle | tee /etc/security/limits.conf
 
 echo 'Downloading linux.x64_11gR2_database_1of2.zip'
-wget -q -O linux.x64_11gR2_database_1of2.zip http://10.0.1.4:8080/linux.x64_11gR2_database_1of2.zip
+wget -q -O linux.x64_11gR2_database_1of2.zip ftp://172.16.3.17/Oracle-11.2.0.4-linux-x86-64/p13390677_112040_Linux-x86-64_1of7.zip
 echo 'Downloading linux.x64_11gR2_database_2of2.zip'
-wget -q -O linux.x64_11gR2_database_2of2.zip http://10.0.1.4:8080/linux.x64_11gR2_database_2of2.zip
+wget -q -O linux.x64_11gR2_database_2of2.zip ftp://172.16.3.17/Oracle-11.2.0.4-linux-x86-64/p13390677_112040_Linux-x86-64_2of7.zip
 echo 'Unzipping'
 unzip -q linux.x64_11gR2_database_1of2.zip
 unzip -q linux.x64_11gR2_database_2of2.zip
